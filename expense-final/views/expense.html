@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+   
+    <title>Document</title>
+</head>
+<body>
+    <header id="main-header" class="bg-success text-white p-4 mb-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1 id="header-title">Expense Tracker</h1>
+                </div>
+                <div class="col-md-6">
+                    
+                </div>
+            </div>
+        </div>
+    </header>
+
+<div class="container">
+    <div id="main" class="card card-body">
+        <h2 class="title">Expenses</h2>
+    
+        <form onsubmit="saveexpense(event)" id="my-form" class="form-inline">
+            
+                <label for="amount" class="form-label">Amount:</label>
+                <input type="number" class="form-control mr-3" id="amount" placeholder="Enter amount" name="amount">          
+
+                <label for="description" class="form-label">Description:</label>
+                <input type="text" class="form-control mr-3" id="description" placeholder="Enter description" name="description">
+
+                <label for="category" class="form-label">Category:</label>
+                <select class="form-select mr-3" id="category">
+                        <option>Fuel</option>
+                        <option>Food</option>
+                        <option>Movies</option>
+                        <option>Electricity</option>
+                </select>
+          
+            <input type="submit" class="btn btn-success" value="Add Expense">
+        </form>
+        <div class="form-label">
+            <br><div id="message"></div>
+            
+            <br><button type="submit" id="rzp-button1" class="btn btn-primary" style="float: right;">Buy Premium Membership</button>
+        
+            <button onclick="download()" id="downloadexpense" class="btn">Download File</button>
+
+        </div>
+        
+        
+    </div>
+
+
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+        <div id="main" class="card card-body">
+            
+            <ul id="expenses">
+                <h5 id="exp" class="title">Expenses</h2>
+            </ul>
+
+        </div>
+
+        <div id="pagination">123</div>
+
+        <div class="login_link">
+            Get A report? <a href="./report.html">Report</a>
+          </div>     
+
+          <form id="perpage" style="padding-top: 2rem; padding-bottom: 2rem;" >
+            Expenses Per Page : <input id="input" type="number" min="5" max="20"  name="itemsPerPage" >
+            <button id="perpagebutton" type="submit">submit</button>
+        </form>
+
+        <ul id="leaderboard"></ul>
+        
+       
+</div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script>
+    <script src="expense.js"></script>
+</body>
+</html>
